@@ -29,7 +29,7 @@ const ProjectOverview = () => {
                             <p className="max-w-fit lg:max-w-[200px] w-full text-sm tracking-[2px] text-primary uppercase font-medium">Side Projects</p>
                             <div className="flex flex-col gap-6">
                                 {sideProjects.map((project) => (
-                                    <Link key={project.id} href={project.githubUrl || "#"} className="group flex flex-wrap items-center gap-2">
+                                    <Link key={project.id} href={`/projects/${project.id}`} className="group flex flex-wrap items-center gap-2">
                                         <h4 className="text-xl font-semibold group-hover:text-violet-600 transition-colors">
                                             {project.title}
                                         </h4>

@@ -12,7 +12,7 @@ const FeaturedWork = () => {
                         <div className="flex flex-col xs:flex-row gap-5 items-center justify-between">
                             <p className="text-sm tracking-[2px] text-primary uppercase font-medium">Proyek Pilihan</p>
                             <Button asChild variant={"outline"} className="h-auto">
-                                <Link href={projects[0].githubUrl || "#"} className="py-3 px-5">
+                                <Link href="/projects" className="py-3 px-5">
                                     Lihat Semua Proyek
                                 </Link>
                             </Button>
@@ -21,17 +21,20 @@ const FeaturedWork = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 border-t border-primary/10">
                         {projects?.slice(0, 4).map((project, index: number) => {
                             const isRightCol = index % 2 === 1;
-                            // Correcting filenames based on actual files in public/images/feature-work
-                            const placeholderImg = `/images/feature-work/feature-img-${(index % 2) + 1}.png`;
+                            
+                            // Prioritize the first image from project data, fallback to placeholder
+                            const projectImg = (project.images && project.images.length > 0) 
+                                ? project.images[0] 
+                                : `/images/feature-work/feature-img-${(index % 2) + 1}.png`;
 
                             return (
                                 <div
                                     key={project.id}
                                     className={`group flex flex-col gap-3.5 sm:gap-5 p-3.5 sm:p-6 ${isRightCol ? 'md:border-l md:border-primary/10' : ''} border-b border-primary/10`}
                                 >
-                                    <Link href={project.liveUrl || "#"} className="overflow-hidden rounded-xl">
+                                    <Link href={`/projects/${project.id}`} className="overflow-hidden rounded-xl">
                                         <Image
-                                            src={placeholderImg}
+                                            src={projectImg}
                                             alt={project.title}
                                             width={490}
                                             height={300}
@@ -39,7 +42,7 @@ const FeaturedWork = () => {
                                         />
                                     </Link>
                                     <div className="flex flex-col gap-1 sm:gap-2 px-2">
-                                        <Link href={project.liveUrl || "#"}>
+                                        <Link href={`/projects/${project.id}`}>
                                             <h4 className="hover:text-violet-600 transition-colors">{project.title}</h4>
                                         </Link>
                                         <div className="flex flex-wrap gap-2">

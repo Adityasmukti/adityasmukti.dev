@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { aboutDescription, specializations, personalInfo } from "@/data/portfolio";
+import { aboutDescription, specializations, personalInfo, education } from "@/data/portfolio";
 
 const AboutMe = () => {
     return (
@@ -27,6 +27,17 @@ const AboutMe = () => {
                                         </Badge>
                                     )
                                 })}
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-4 mt-4">
+                            <p className="text-sm text-primary uppercase font-medium">Pendidikan</p>
+                            <div className="flex flex-col gap-3">
+                                {education?.map((edu, index) => (
+                                    <div key={index} className="flex flex-col gap-1 border-l-2 border-primary/20 pl-4">
+                                        <h4 className="font-semibold">{edu.degree}</h4>
+                                        <p className="text-sm text-secondary">{edu.institution} • {edu.year}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
