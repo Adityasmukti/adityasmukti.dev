@@ -170,7 +170,7 @@ export const projects = [
     category: "Backend",
     isPrivate: false,
     images: [
-      "/images/feature-work/feature-img-1.png",
+      "/images/feature-work/simb.JPG",
     ],
     caseStudy: {
       problem: "Terjadinya perbedaan stok antara gudang pusat dan cabang karena pencatatan manual. Sistem membutuhkan kalkulasi laporan keuangan dari jutaan baris transaksi secara instan tanpa membuat aplikasi hang.",
@@ -323,6 +323,9 @@ export const projects = [
     githubUrl: "https://github.com/Adityasmukti/generasibola",
     category: "Fullstack",
     isPrivate: false,
+    images: [
+      "/images/feature-work/generasibola.png",
+    ],
   },
   {
     id: "dekranasda",
@@ -337,6 +340,9 @@ export const projects = [
     githubUrl: "https://github.com/Adityasmukti/dekranasda",
     category: "Fullstack",
     isPrivate: false,
+    images: [
+      "/images/feature-work/dekranasda.png",
+    ],
   },
   {
     id: "emonev",
@@ -351,10 +357,13 @@ export const projects = [
     githubUrl: "https://github.com/Adityasmukti/emonev",
     category: "Fullstack",
     isPrivate: false,
+    images: [
+      "/images/feature-work/emonev.png",
+    ],
   },
   {
     id: "makloon-system",
-    title: "Makloon Manufacturing System",
+    title: "Makloon Manufacturing System(Dev)",
     description: "Sistem manajemen produksi dan pemesanan makloon untuk pabrik.",
     features: ["Order Tracking", "Production Workflow", "Vendor Management"],
     tech: ["Laravel", "PHP", "MySQL"],
