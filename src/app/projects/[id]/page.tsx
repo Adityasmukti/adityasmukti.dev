@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/portfolio";
@@ -7,13 +6,18 @@ import Divider from "@/components/typefolio/divider";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ExternalLink, Lock } from "lucide-react";
-import MermaidDiagram from '@/components/typefolio/MermaidDiagram';
-
+import MermaidDiagram from "@/components/typefolio/MermaidDiagram";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
+}
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return projects.map((project) => ({ id: project.id }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
