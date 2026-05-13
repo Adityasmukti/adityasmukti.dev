@@ -75,4 +75,15 @@
 **Dampak:**
 - Website bertransformasi menjadi desain minimalis premium dengan sistem warna light/dark yang solid.
 - Navigasi dan struktur halaman menjadi lebih ringkas dan profesional.
-- Data portofolio sekarang terhubung dengan link repository GitHub asli.
+### [2026-05-13] - Konfigurasi Deployment & Branding
+
+**Perubahan:**
+- Update `next.config.ts`: Memastikan `basePath` kosong karena website di-host di root domain (`adityasmukti.github.io`).
+- Create `public/.nojekyll`: Mencegah pemrosesan Jekyll di GitHub Pages.
+- Update Branding: Mengganti favicon default dengan `logo-kodemukti.jpg`.
+
+**Alasan:**
+- Menyesuaikan konfigurasi dengan URL tujuan (`https://adityasmukti.github.io/`). Sebelumnya sempat ditambahkan `basePath` yang justru menyebabkan 404 karena browser mencari aset di sub-folder yang tidak ada.
+
+**Dampak:**
+- Website siap di-deploy ke root domain dengan aset yang ter-load secara benar dari `/_next/`.
