@@ -75,15 +75,19 @@
 **Dampak:**
 - Website bertransformasi menjadi desain minimalis premium dengan sistem warna light/dark yang solid.
 - Navigasi dan struktur halaman menjadi lebih ringkas dan profesional.
-### [2026-05-13] - Konfigurasi Deployment & Branding
+### [2026-05-13] - Optimasi Performa (LCP & CLS)
 
 **Perubahan:**
-- Update `next.config.ts`: Memastikan `basePath` kosong karena website di-host di root domain (`adityasmukti.github.io`).
-- Create `public/.nojekyll`: Mencegah pemrosesan Jekyll di GitHub Pages.
-- Update Branding: Mengganti favicon default dengan `logo-kodemukti.jpg`.
+- Update `HeroSection`: Menambahkan atribut `priority` pada banner dan foto profil untuk mempercepat LCP.
+- Update `ProjectDetailPage`: Migrasi dari tag `<img>` ke `<Image />` Next.js untuk optimasi otomatis (WebP, lazy loading) dan menambahkan `priority` pada gambar utama proyek.
+- Verifikasi Font: Memastikan penggunaan `next/font/google` untuk eliminasi render-blocking resources.
+- Perbaikan CLS: Memastikan semua gambar memiliki `width` dan `height` yang eksplisit.
+- Update Data: Menambahkan pengalaman kerja terbaru sebagai IT Senior Developer di PT. Thor Teknologi Digital.
 
 **Alasan:**
-- Menyesuaikan konfigurasi dengan URL tujuan (`https://adityasmukti.github.io/`). Sebelumnya sempat ditambahkan `basePath` yang justru menyebabkan 404 karena browser mencari aset di sub-folder yang tidak ada.
+- Meningkatkan skor PageSpeed Insights, khususnya metrik Largest Contentful Paint (LCP) dan Cumulative Layout Shift (CLS) untuk pengalaman pengguna yang lebih mulus dan ranking SEO yang lebih baik.
 
 **Dampak:**
-- Website siap di-deploy ke root domain dengan aset yang ter-load secara benar dari `/_next/`.
+- Waktu pemuatan visual utama menjadi lebih cepat.
+- Tidak ada pergeseran tata letak (layout shift) saat gambar dimuat.
+- Aset gambar dikirimkan dalam format modern (WebP) dengan ukuran yang lebih kecil.

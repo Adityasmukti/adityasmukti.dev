@@ -79,7 +79,7 @@ export const projects = [
     category: "Backend",
     isPrivate: true,
     images: [
-      "/images/feature-work/omni-channel.png",
+      "/images/feature-work/omni-channel.webp",
     ],
     caseStudy: {
       problem: "Perusahaan memerlukan sistem yang dapat menangani ribuan pesan per menit dari berbagai saluran (WhatsApp, Email, Live Chat) ke ratusan agen customer service, tanpa mengalami bottleneck pada database utama atau kehilangan pesan saat koneksi terputus.",
@@ -129,8 +129,8 @@ export const projects = [
     category: "AI",
     isPrivate: false,
     images: [
-      "/images/feature-work/officeflow-1.png",
-      "/images/feature-work/officeflow-2.png",
+      "/images/feature-work/officeflow-1.webp",
+      "/images/feature-work/officeflow-2.webp",
     ],
     caseStudy: {
       problem: "Proses administrasi kantor tradisional sangat rentan terhadap human error dan memakan waktu, terutama dalam hal pemrosesan dokumen masal dan routing tugas ke departemen yang tepat.",
@@ -170,7 +170,7 @@ export const projects = [
     category: "Backend",
     isPrivate: false,
     images: [
-      "/images/feature-work/simb.JPG",
+      "/images/feature-work/simb.webp",
     ],
     caseStudy: {
       problem: "Terjadinya perbedaan stok antara gudang pusat dan cabang karena pencatatan manual. Sistem membutuhkan kalkulasi laporan keuangan dari jutaan baris transaksi secara instan tanpa membuat aplikasi hang.",
@@ -207,7 +207,7 @@ export const projects = [
     category: "Fullstack",
     isPrivate: false,
     images: [
-      "/images/feature-work/bookgenville.png",
+      "/images/feature-work/bookgenville.webp",
     ],
     caseStudy: {
       problem: "Sering terjadinya 'Race Condition' di mana dua pelanggan berhasil memesan fasilitas atau ruangan yang sama pada detik yang bersamaan karena validasi tingkat aplikasi yang lemah.",
@@ -239,7 +239,7 @@ export const projects = [
     category: "Frontend",
     isPrivate: false,
     images: [
-      "/images/feature-work/kopi-senja.png",
+      "/images/feature-work/kopi-senja.webp",
     ],
   },
   {
@@ -256,7 +256,7 @@ export const projects = [
     category: "Fullstack",
     isPrivate: false,
     images: [
-      "/images/feature-work/klinik-gigi.png",
+      "/images/feature-work/klinik-gigi.webp",
     ],
   },
   {
@@ -273,7 +273,7 @@ export const projects = [
     category: "Fullstack",
     isPrivate: false,
     images: [
-      "/images/feature-work/nec.png",
+      "/images/feature-work/nec.webp",
     ],
   },
   {
@@ -290,7 +290,7 @@ export const projects = [
     category: "Fullstack",
     isPrivate: false,
     images: [
-      "/images/feature-work/koperasi.png",
+      "/images/feature-work/koperasi.webp",
     ],
   },
   {
@@ -307,7 +307,7 @@ export const projects = [
     category: "Fullstack",
     isPrivate: false,
     images: [
-      "/images/feature-work/psytest.png",
+      "/images/feature-work/psytest.webp",
     ],
   },
   {
@@ -324,7 +324,7 @@ export const projects = [
     category: "Fullstack",
     isPrivate: false,
     images: [
-      "/images/feature-work/generasibola.png",
+      "/images/feature-work/generasibola.webp",
     ],
   },
   {
@@ -341,7 +341,7 @@ export const projects = [
     category: "Fullstack",
     isPrivate: false,
     images: [
-      "/images/feature-work/dekranasda.png",
+      "/images/feature-work/dekranasda.webp",
     ],
   },
   {
@@ -358,7 +358,7 @@ export const projects = [
     category: "Fullstack",
     isPrivate: false,
     images: [
-      "/images/feature-work/emonev.png",
+      "/images/feature-work/emonev.webp",
     ],
   },
   {
@@ -458,8 +458,18 @@ export const architectureLayers = [
 
 export const experiences = [
   {
+    id: "thor2",
+    period: "Oct 2025 – Sekarang",
+    role: "IT Senior Developer",
+    company: "PT. Thor Teknologi Digital",
+    description:
+      "Bertanggung jawab untuk memimpin pengembangan produk software dan memonitor performa sistem, memastikan skalabilitas, keamanan, dan kualitas kode. Berkolaborasi dengan tim produk untuk menerjemahkan kebutuhan bisnis menjadi solusi teknis yang efisien dan inovatif.",
+    tags: ["Node.js", "Express", "Next.js", "Docker", "MySQL", "AI Agent", "Knowledge Base", "Webhooks", "Nginx", "Cloudflare"],
+    isCurrent: true,
+  },
+  {
     id: "mai",
-    period: "Dec 2019 – Sekarang",
+    period: "Dec 2019 – Sep 2025",
     role: "SPV IT & Programmer",
     company: "PT Mulya Angel Imani",
     description:

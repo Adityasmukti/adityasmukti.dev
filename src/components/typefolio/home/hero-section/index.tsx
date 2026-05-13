@@ -10,12 +10,12 @@ const HeroSection = () => {
             <div className="container">
                 <div className="">
                     <div className="w-full h-72">
-                        <Image src={"/images/aditias-1-1x1.webp"} alt="banner-img" width={1080} height={267} className="w-full h-full object-cover object-[50%_30%]" />
+                        <Image src={"/images/aditias-1-1x1.webp"} alt="Banner Portfolio Aditias Muktiyanto - Fullstack Developer" width={1080} height={267} priority className="w-full h-full object-cover object-[50%_30%]" />
                     </div>
                     <div className="border-x border-primary/10">
                         <div className="relative flex flex-col xs:flex-row items-center xs:items-start justify-center xs:justify-between max-w-3xl mx-auto gap-10 xs:gap-3 px-4 sm:px-7 pt-22 pb-8 sm:pb-12">
                             <div className="absolute top-0 transform -translate-y-1/2">
-                                <Image src={"/images/aditias-2-1x1.webp"} alt="user-img" width={145} height={145} className="border-4 border-white rounded-full bg-slate-200 object-cover" />
+                                <Image src={"/images/aditias-2-1x1.webp"} alt="Foto Profil Aditias Muktiyanto" width={145} height={145} priority className="border-4 border-white rounded-full bg-slate-200 object-cover" />
                                 <span className="absolute bottom-2.5 right-5 w-4 h-4 bg-green-500 border-2 border-white rounded-full" />
                             </div>
                             <div className="flex flex-col gap-2 sm:gap-3 items-center text-center xs:items-start">

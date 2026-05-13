@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/portfolio";
@@ -49,9 +50,9 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="pt-8 pb-4">
         <div className="container">
           <div className="border-x border-primary/10 px-4 sm:px-7">
-            <Link href="/" className="inline-flex items-center gap-2 text-sm text-secondary hover:text-primary transition-colors group mb-8">
+            <Link href="/projects" className="inline-flex items-center gap-2 text-sm text-secondary hover:text-primary transition-colors group mb-8">
               <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
-              Kembali ke Beranda
+              Kembali ke Projects
             </Link>
             <div className="flex flex-col gap-4 mb-12">
               <p className="text-xs tracking-[3px] text-primary uppercase font-bold">{project.category}</p>
@@ -71,10 +72,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                <div className="flex flex-col gap-8 p-4 sm:p-7">
                  {project.images.map((img, i) => (
                    <div key={i} className="w-full overflow-hidden rounded-xl border border-primary/10">
-                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                     <img
+                     <Image
                        src={img}
                        alt={`${project.title} - ${i + 1}`}
+                       width={1200}
+                       height={800}
+                       priority={i === 0}
                        className="w-full h-auto block hover:scale-[1.02] transition-transform duration-500"
                      />
                    </div>
@@ -83,10 +86,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
              ) : (
                <div className="w-full p-4 sm:p-7">
                  <div className="w-full overflow-hidden rounded-xl border border-primary/10">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <Image
                       src={bannerImg}
                       alt={project.title}
+                      width={1200}
+                      height={600}
+                      priority
                       className="w-full h-auto block"
                     />
                  </div>
