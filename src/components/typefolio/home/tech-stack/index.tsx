@@ -1,6 +1,11 @@
+'use client';
+
 import { techStack } from "@/data/portfolio";
+import { useLocale } from "@/lib/i18n";
 
 export default function TechStack() {
+  const { t } = useLocale();
+
   return (
     <section className="py-20 md:py-32">
       <div className="container">
@@ -10,9 +15,9 @@ export default function TechStack() {
             {/* Left Column: Title */}
             <div className="w-full md:w-1/3 p-4 sm:p-7 md:p-12 md:border-r border-primary/10 border-b md:border-b-0">
               <div className="sticky top-24 flex flex-col gap-4">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Tech Stack</h2>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{t('techstack.title')}</h2>
                 <p className="text-secondary leading-relaxed max-w-sm">
-                  Teknologi dan alat yang saya gunakan untuk membangun sistem yang skalabel, performant, dan tangguh.
+                  {t('techstack.description')}
                 </p>
               </div>
             </div>

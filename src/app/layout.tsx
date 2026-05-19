@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/typefolio/layout/header";
-import Footer from "@/components/typefolio/layout/footer";
+import ClientLayout from "./client-layout";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://adityasmukti.github.io"),
   title: "Aditias Muktiyanto — Fullstack Developer & System Architect",
   description:
-    "Portfolio Aditias Muktiyanto, Fullstack Developer & System Architect yang fokus pada realtime systems, AI integration, omnichannel platform, dan scalable backend architecture menggunakan Node.js, React, Redis, dan MySQL.",
+    "Portfolio of Aditias Muktiyanto, Fullstack Developer & System Architect focused on realtime systems, AI integration, omnichannel platform, and scalable backend architecture using Node.js, React, Redis, and MySQL.",
   keywords: [
     "Fullstack Developer",
     "System Architect",
@@ -37,11 +36,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "id_ID",
+    locale: "en_US",
     url: "https://adityasmukti.github.io",
     title: "Aditias Muktiyanto — Fullstack Developer & System Architect",
     description:
-      "Portfolio Aditias Muktiyanto, Fullstack Developer & System Architect yang fokus pada realtime systems, AI integration, dan scalable backend architecture.",
+      "Portfolio of Aditias Muktiyanto, Fullstack Developer & System Architect focused on realtime systems, AI integration, and scalable backend architecture.",
     siteName: "aditias.dev",
     images: [
       {
@@ -56,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aditias Muktiyanto — Fullstack Developer & System Architect",
     description:
-      "Portfolio Aditias Muktiyanto — Realtime Systems, AI Integration, Scalable Backend.",
+      "Portfolio of Aditias Muktiyanto — Realtime Systems, AI Integration, Scalable Backend.",
     images: ["/icon.jpg"],
   },
   robots: {
@@ -78,7 +77,7 @@ const jsonLd = {
   name: "Aditias Muktiyanto",
   url: "https://adityasmukti.github.io",
   jobTitle: "Fullstack Developer & System Architect",
-  description: "Senior Software Engineer fokus pada Realtime Systems dan AI Integration.",
+  description: "Senior Software Engineer focused on Realtime Systems and AI Integration.",
   sameAs: [
     "https://github.com/adityasmukti",
     "https://linkedin.com/in/adityasmukti",
@@ -91,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -99,9 +98,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} antialiased bg-background text-foreground`}>
-        <Header />
-        {children}
-        <Footer />
+        <ClientLayout>
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );

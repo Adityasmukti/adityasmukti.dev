@@ -1,43 +1,62 @@
-import Image from "next/image"
+'use client';
+
 import { experiences } from "@/data/portfolio";
+import { useLocale } from "@/lib/i18n";
 
 const Experience = () => {
+    const { locale } = useLocale();
+
     return (
         <section id="experience">
             <div className="container">
                 <div className="border-x border-primary/10">
                     <div className="flex flex-col max-w-3xl mx-auto py-10 px-4 sm:px-7">
                         <div className="flex flex-col xs:flex-row gap-5 items-center justify-between">
-                            <p className="text-sm tracking-[2px] text-primary uppercase font-medium">Pengalaman</p>
+                            <p className="text-sm tracking-[2px] text-primary uppercase font-medium">
+                                {locale === 'en' ? 'Experience' : 'Pengalaman'}
+                            </p>
                         </div>
                     </div>
                     <div className="border-t border-primary/10">
                         <div className="flex flex-col max-w-3xl mx-auto px-4 sm:px-7 py-9 md:py-16">
-                            {experiences?.map((exp, index) => {
+                            {experiences?.map((exp) => {
+                                const expDesc = locale === 'en' && 'descriptionEn' in exp
+                                    ? (exp as unknown as Record<string, string>).descriptionEn
+                                    : exp.description;
                                 return (
                                     <div
                                         key={exp.id}
                                         className="flex flex-col gap-5 border-dashed border-b border-primary/10 last:border-b-0 pt-8 sm:pt-10 pb-8 sm:pb-10 first:pt-0 last:pb-0">
-                                        <div className="flex flex-wrap gap-5 items-center justify-between">
-                                            <div className="flex flex-col gap-1">
-                                                <h5 className="font-bold">{exp.role}</h5>
-                                                <p className="text-sm text-primary/70">{exp.company}</p>
+
+                                        <div className="flex flex-col gap-1">
+                                            <div className="flex flex-wrap items-center gap-3">
+                                                <h4 className="font-bold text-lg">{exp.role}</h4>
+                                                {exp.isCurrent && (
+                                                    <div className="flex items-center gap-1.5 bg-violet-600/10 border border-violet-600/20 rounded-full py-0.5 pl-1.5 pr-2.5">
+                                                        <span className="size-1.5 rounded-full bg-violet-600 animate-pulse-slow" />
+                                                        <span className="text-xs font-medium text-violet-600">
+                                                            {locale === 'en' ? 'Current' : 'Current'}
+                                                        </span>
+                                                    </div>
+                                                )}
                                             </div>
-                                            <div className="flex items-center gap-2.5 border border-primary/10 rounded-lg py-1.5 px-3">
-                                                <div className={`w-4 h-2 rounded-sm ${exp.isCurrent ? 'bg-primary' : 'bg-primary/10'} `} />
-                                                <p className="text-sm xs:text-base text-primary">{exp.period} · {exp.company}</p>
+                                            <div className="flex flex-wrap items-center gap-x-2">
+                                                <span className="font-semibold text-primary">{exp.company}</span>
+                                                <span className="text-xs text-secondary">•</span>
+                                                <span className="text-xs text-secondary">{exp.period}</span>
                                             </div>
                                         </div>
-                                        <p className="text-secondary leading-relaxed">{exp.description}</p>
-                                        <div className="flex flex-wrap gap-2 mt-2">
-                                            {exp.tags?.map((tag) => (
-                                                <span key={tag} className="text-xs px-3 py-1 bg-primary/5 rounded-md text-primary/80 border border-primary/10">
-                                                    {tag}
-                                                </span>
+
+                                        <p className="text-sm text-secondary leading-relaxed"
+                                        >{expDesc}</p>
+
+                                        <div className="flex flex-wrap gap-1.5">
+                                            {exp.tags.map((tag) => (
+                                                <span key={tag} className="text-[10px] px-2 py-0.5 bg-primary/5 border border-primary/5 text-primary/60 rounded-md">{tag}</span>
                                             ))}
                                         </div>
                                     </div>
-                                );
+                                )
                             })}
                         </div>
                     </div>
