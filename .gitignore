@@ -41,5 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 #Proyek saya
-/Proyek-saya
-/Proyek-saya/*
+/Proyek-Saya/**
+!.gitignore
